@@ -1,4 +1,8 @@
-import { RouterContext } from "https://deno.land/x/oak/mod.ts";
+import { RouterContext, Context } from "https://deno.land/x/oak/mod.ts";
+
+export const helloWorld = (context: RouterContext) => {
+  context.response.body = 'Hello world!';
+};
 
 export const getProducts = async (context: RouterContext) => {
   context.response.body = [{id: 1, name: 'test'}, {id: 2, name: 'test 2'}]

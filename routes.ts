@@ -1,11 +1,11 @@
 import { Router } from "https://deno.land/x/oak/mod.ts";
 
-import { getProducts, createProducts } from "./controllers/productController.ts";
+import { getProducts, createProducts, helloWorld } from "./controllers/productController.ts";
 
 const router = new Router();
 
 router
-  .get('/', (response: any) => { response.body = 'Hello World!' })
+  .get('/', helloWorld)
   .get("/product", getProducts)
   .post("/product", createProducts);
 
